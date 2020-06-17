@@ -19,14 +19,14 @@ class TweetsController < ApplicationController
   post '/tweets' do
     if logged_in?
       if params[:content] == ""
-        redirect to "tweets/new"
+        redirect to "tweets/create_tweet"
       else
         @tweet = Tweet.new(params)
         @tweet.user = current_user
         if @tweet.save
             redirect to "/tweets/#{@tweet.id}"
         else
-            redirect to '/tweets/new'
+            redirect to '/tweets/create_tweet'
         end
       end
     else
