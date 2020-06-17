@@ -26,7 +26,7 @@ class TweetsController < ApplicationController
         if @tweet.save
             redirect to "/tweets/#{@tweet.id}"
         else
-            redirect to '/tweets/create_tweet'
+            redirect to '/tweets/new'
         end
       end
     else
